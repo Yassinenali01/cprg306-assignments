@@ -1,7 +1,7 @@
 import StudentInfo from "../StudentInfo/page.js";
 
 
-export default function week2() {
+export default function Week2() {
     return(
         <main>
             <h1> My Shopping List </h1>
