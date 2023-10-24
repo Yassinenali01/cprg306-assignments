@@ -2,7 +2,7 @@
 import { useState    } from "react";
 
 
-export default function NewItem (){
+export default function NewItem ({onAddItem}){
     
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState(1);
@@ -13,17 +13,20 @@ export default function NewItem (){
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
+    
         const item= {
             name, 
             quantity,
             category,
         };
 
-        console.log(item);
-        alert(`Name: ${name}, Quantity: ${quantity}, Category: ${category}`);
-
-        //alert("added item: ", name,"quantity:",  quantity, "category:", category);
+        
+        
+        onAddItem(item);
+    
+        
+        //alert(`Name: ${name}, Quantity: ${quantity}, Category: ${category}`);
+       
 
         setName("");
         setQuantity(1);
@@ -100,5 +103,4 @@ export default function NewItem (){
                 </div>
             </main>
         )
-    
 }
